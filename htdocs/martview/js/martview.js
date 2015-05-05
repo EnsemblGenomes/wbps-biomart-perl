@@ -183,8 +183,10 @@ function addDatasetParamToForm(dsetName) {
 	{
 		addHiddenFormParam(visibleStatusParamName, document.mainform, 'show');
 	}
-	document.mainform['mart_mainpanel__current_visible_section'].value  = dsetName+'__infopanel';
-	document.mainform['summarypanel__current_highlighted_branch'].value = dsetName+'__summarypanel_datasetbranch';
+	//document.mainform['mart_mainpanel__current_visible_section'].value  = dsetName+'__infopanel';
+	//document.mainform['summarypanel__current_highlighted_branch'].value = dsetName+'__summarypanel_datasetbranch';
+	document.mainform['mart_mainpanel__current_visible_section'].value  = dsetName+'__filterpanel';
+	document.mainform['summarypanel__current_highlighted_branch'].value = dsetName+'__summarypanel_filterbranch';
 }
 
 
@@ -1147,6 +1149,10 @@ function getFiltersInContainer(containerEltId) {
 										}
 										filterInfoOf[filterName] = [filterDisplayName, filterValues.join()];
 									}			
+								}
+								if(filterValueElt.name.match(/species_id_1010/)) {
+									filterValue = '[Species-list specified]';
+									filterInfoOf[filterName] = [filterDisplayName, filterValue];
 								}
 								//alert('Have value '+filterValue+' for filter '+filterDisplayName);
 							break;
@@ -2182,7 +2188,13 @@ function datasetpanel_pre_onload(menuLists, sessionValues, schemaTitle, database
 					//	alert(dataForMenus['databasemenu'][db_name]['datasetmenu_3'][i][0]);
 					var val = dataForMenus['schema'][schema_name]['databasemenu'][i][0];
 					var display = dataForMenus['schema'][schema_name]['databasemenu'][i][1];
-					document.mainform.databasemenu[j++] = new Option(display, val);					
+					// Check if there are multiple datasets, otherwise auto-select the only option
+					if(dataForMenus['schema'][schema_name]['databasemenu'].length == 1) {
+						document.mainform.databasemenu[j++] = new Option(display, val, 1, 1);
+						document.mainform.databasemenu.onchange(); // Trigger the action that would be performed had the user selected a dataset
+					} else {
+						document.mainform.databasemenu[j++] = new Option(display, val);
+					}					
 				}				
 			}
 		}
