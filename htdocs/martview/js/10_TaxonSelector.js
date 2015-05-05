@@ -58,14 +58,14 @@ $(document).ready(function() {
 			var panel = this;
 			var items = panel.getSelectedItems();
 			$('li', panel.list).remove();
-			$('#wbps_eg_gene__filter\\.species_id_1010').find('option').removeAttr('selected');
+			$("[id$=__filter\\.species_id_1010]").find('option').removeAttr('selected');
 			$.each(items, function(index, item){
 				var li = $('<li><span>' + item.title + '</span><span class="remove"></span></li>').appendTo(panel.list);
 				$('.remove', li).click(function(){panel.removeListItem($(this).parent())});
 				var bioproj = item.key.split('_')[2];
-				$('#wbps_eg_gene__filter\\.species_id_1010 option[value=' + bioproj + ']').prop('selected', true);
+				$("[id$=__filter\\.species_id_1010] option[value=" + bioproj + "]").prop('selected', true);
 			});
-			$('#idTag__wbps_eg_gene__filtercollection\\.species').change();  // Trigger the onChange event to update the BioMart
+			$("[id$=__filtercollection\\.species]").change();  // Trigger the onChange event to update the BioMart
 		}
 		panel.removeListItem = function(li) {
 			var panel = this;
@@ -78,7 +78,7 @@ $(document).ready(function() {
 					return;
 				}
 			});
-			$('#idTag__wbps_eg_gene__filtercollection\\.species').change(); // Trigger the onChange event to update the BioMart
+			$("[id$=__filtercollection\\.species]").change(); // Trigger the onChange event to update the BioMart
 		}
 	
 	
@@ -166,8 +166,8 @@ $(document).ready(function() {
 		});	
 
 		// Update the species count label
-                $('#idTag__wbps_eg_gene__filtercollection\\.species').change(function() {
-                  var count = $('#idTag__wbps_eg_gene__filtercollection\\.species :selected').length;
+                $("[id$=__filtercollection\\.species]").change(function() {
+                  var count = $("[id$=__filtercollection\\.species] :selected").length;
                   var descriptor = count == 1 ? 'genome' : 'genomes';
                   count = count == 0 ? 'No' : count;
 		  $('#speciesCount').html(count + ' ' + descriptor + ' selected');
