@@ -22,7 +22,7 @@ ctl_hidden_AttFiltPanel" style="display: none
 [% ELSE %]
 ctl_visible_AttFiltPanel
 [% END %]
-">
+" onclick="visibility('[% section_name %]','show');" style="cursor:pointer">
   <span onclick="visibility('[% section_name %]','show');">
     <img src="/[% TAG_path %]/mview/images/plus.png" alt="" />
   </span>
@@ -41,7 +41,7 @@ ctl_visible_AttFiltPanel
 [% ELSE %]
 ctl_hidden_AttFiltPanel" style="display: none 
 [% END %]
-">
+" onclick="visibility('[% section_name %]','hide');" style="cursor:pointer">
   <span onclick="visibility('[% section_name %]','hide');">
     <img src="/[% TAG_path %]/mview/images/minus.png" alt="" />
   </span>
