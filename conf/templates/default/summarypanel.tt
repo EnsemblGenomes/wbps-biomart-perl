@@ -89,7 +89,7 @@
 <!-- enabled filters list OPENS -->
 
 <div style="font-size: 10pt; font-weight: bold; padding: 5px">
-  BioMart allows the fast export a table of data or a file containing sequence in just a few steps:
+  BioMart allows the fast export of data tables and sequence in just a few steps:
   <ol>
     <li>Select your 'Query Filters' (these are search parameters that define your results)</li>
     <li>Choose your 'Output Attributes' (what you would like to include in your results table or file)</li>
