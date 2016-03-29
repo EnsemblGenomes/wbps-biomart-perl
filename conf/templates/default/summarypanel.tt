@@ -35,7 +35,7 @@
 -->
 
 
-<table class="mart_summarypanel_listheaderTable" width="100%" border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; margin: 16px 0px 0px 0px;">
+<table class="mart_summarypanel_listheaderTable" width="100%" border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; margin: 16px 0px 0px 0px; display: none">
 <tr>
 <td onclick="document.getElementById('${dset_name}__summarypanel_datasetbranch').onclick();"
 	onmouseover="setMouseOverStyle('${dset_name}__summarypanel_datasetbranch');"
@@ -88,6 +88,14 @@
 
 <!-- enabled filters list OPENS -->
 
+<div style="font-size: 10pt; font-weight: bold; padding: 5px">
+  BioMart allows the fast export a table of data or a file containing sequence in just a few steps:
+  <ol>
+    <li>Select your 'Query Filters' (these are search parameters that define your results)</li>
+    <li>Choose your 'Output Attributes' (what you would like to include in your results table or file)</li>
+    <li>Hit the 'Results' button at the top of this page</li>
+</div>
+
 <div id="${dset_name}__filterlist">
 <!--
 <img src="/martview/images/triangle_gray_small_right.png" alt="" />
@@ -104,7 +112,7 @@ onmouseover="setAttFiltMouseOverStyle('${dset_name}__summarypanel_filterbranch')
 	showPanelHideSiblings('${dset_name}__filterpanel'); setHighlightedSummaryPanelBranch(this.id);" 
 	onmouseover="setAttFiltMouseOverStyle(this.id);" 
 	onmouseout="setAttFiltMouseOutStyle(this.id);" 
-	title="Restrict your query by filtering">Filters </span>
+	title="Restrict your query by filtering" style="text-decoration: underline; color: blue">1. Query Filters</span>
 </td>
 </tr>
 </table>
@@ -163,8 +171,8 @@ onmouseover="setAttFiltMouseOverStyle('${dset_name}__summarypanel_filterbranch')
 	expandListCompactSiblings(currentAttpage+'__attributelist'); " 
 	onmouseover="setAttFiltMouseOverStyle(this.id);" 
 	onmouseout="setAttFiltMouseOutStyle(this.id);"
-	title="Choose data you want to view or save">
-	Attributes </span>
+	title="Choose data you want to view or save" style="text-decoration: underline; color: blue">
+	2. Output Attributes</span>
 </td>
 </tr>
 </table>
