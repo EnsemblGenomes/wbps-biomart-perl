@@ -7,7 +7,7 @@
     padding:0px;
     margin:0px;
     border-collapse:collapse;
-    background-color:#712786
+    background-color:black
 }
 
 
@@ -73,8 +73,8 @@ div#mart_containerpanel
 
 .mart_summarypanel_datasets
 {
-  /*background-color: #D3D9E2; /*#DDDAE5;*/
-  background-color: #DDDAE5;
+  /*background-color: #D3D9E2; /*#E5E5E5;*/
+  background-color: #E5E5E5;
 
 
 	/*	_width:expression(document.body.clientWidth > 2 ? "100%" : "100%" );  */ /*FOR IE 6 and below*/
@@ -103,7 +103,7 @@ div#mart_mainpanel
 	background-color: white;
 	border-style: solid;
 	border-width: 0px;
-	border-color: #712786;
+	border-color: #CCCCCC;
 	width: inherit;
 	clear: both;
 	overflow: auto;
@@ -118,7 +118,7 @@ div#mart_main_menubar_outer
 	margin: 2px;
 	border-style: solid;
 	border-width: 2px;
-	border-color: #712786;
+	border-color: #CCCCCC;
 	width: inherit;
 	background-color: white;
 }
@@ -126,21 +126,21 @@ div#mart_main_menubar_outer
 .mart_main_menubar
 {
 	padding: 7px 0px 7px 0px;
-	border-color: #DDDAE5;
-	background-color: #DDDAE5;
+	border-color: black;
+	background-color: black;
 }
 
 div#mart_bottom_bar
 {
 	border-style: solid;
 	border-width: 1px;
-	color: #DDDAE5;
+	color: #E5E5E5;
 	font-weight: bold;
 	font-size: 9pt;
         padding: 2px;
 	width: inherit;
-	border-color: #DDDAE5;
-	background-color: #DDDAE5;
+	border-color: black;
+	background-color: black;
 	font-family: sans-serif;
 }
 
@@ -148,11 +148,11 @@ div#mart_bottom_bar
 {
 	border-style: solid;
 	border-width: 1px;
-	color: #DDDAE5;
+	color: #E5E5E5;
 	font-weight: bold;
 	width: inherit;
-	border-color: #DDDAE5;
-	background-color: #DDDAE5;
+	border-color: black;
+	background-color: black;
 	font-family: sans-serif;
 }
 
@@ -161,7 +161,7 @@ div#mart_bottom_bar
 	border-style: solid;
 	border-width: 1px;
 	padding: 4px;
-	border-color: #712786;
+	border-color: #CCCCCC;
 	clear: both;
 	width: inherit;
 	overflow: auto;
@@ -175,7 +175,7 @@ div#mart_export_menubar
 	background-color: white;
 	border-width: 0px;
 	padding: 10px 0px 0px 0px;
-	border-color: #712786;
+	border-color: #CCCCCC;
 	width: inherit;
 }
 
@@ -190,7 +190,7 @@ div#mart_export_data
 .mart_viewPanel
 {
 	color: black;
-	background-color: white;/*#712786;*/
+	background-color: white;/*#CCCCCC;*/
 }
 
 /* button and hover on functions */
@@ -213,8 +213,8 @@ div#mart_export_data
 		padding: 3px 5px 3px 25px;
   border     : 1px solid;
   border-style: outset;
-  color      : #DDDAE5;
-  background-color: #DDDAE5;
+  color      : #E5E5E5;
+  background-color: black;
 
 	background-position: 5px center;
 	background-repeat: no-repeat;
@@ -228,7 +228,7 @@ div#mart_export_data
   border-style : inset;
   cursor       : pointer;
   color      : white;
-  background-color: #712786;
+  background-color: #666666;
 
 	background-position: 5px center;
 	background-repeat: no-repeat;
@@ -271,8 +271,8 @@ div#mart_export_data
 		padding: 3px 5px 3px 25px;
   border     : 1px solid;
   border-style: solid;
-  color      : #712786;
-  background-color: #DDDAE5;
+  color      : #666666;
+  background-color: black;
 
   	background-position: 5px center;
 	background-repeat: no-repeat;
@@ -378,7 +378,7 @@ div#mart_export_data
 
 .dummyLine
 {
-	background-color: #DDDAE5;
+	background-color: #E5E5E5;
 	border-style: solid;
 	border-width: 0px 0px 1px 0px;
 	border-color: black;
@@ -386,7 +386,7 @@ div#mart_export_data
 }
 .dummyLine_1
 {
-/*	background-color: #DDDAE5; */
+/*	background-color: #E5E5E5; */
 	border-style: solid;
 	border-width: 0px 0px 0px 0px;
 /*	border-color: black; */
@@ -395,7 +395,7 @@ div#mart_export_data
 }
 .dummyLine_2
 {
-	background-color: #DDDAE5;
+	background-color: #E5E5E5;
 	border-style: solid;
 	border-width: 0px 0px 1px 0px;
 	border-color: black;
@@ -416,7 +416,7 @@ div#mart_export_data
 	background-color: white;
 	border-style: solid;
 	border-width: 1px 1px 1px 1px;
-	border-color: #712786;
+	border-color: #CCCCCC;
 	padding: 4px;
 	margin: 0px 4px 2px 0px;
 	overflow: auto;
@@ -523,7 +523,7 @@ div#mart_export_data
 .mart_summarypanel_listheader_mouseover,
 .mart_summarypanel_listheader_highlighted
 {
-	background-color: 	#712786;
+	background-color: 	#CCCCCC;
 	color: black;
 	cursor: pointer;
 	font-weight: bold;
@@ -541,14 +541,14 @@ div#mart_export_data
 
 .mart_summarypanel_listheader_highlighted
 {
-	background-color: 	#712786;
+	background-color: 	#666666;
 	color: white;
 }
 
 .mart_summarypanel_listheaderTable,
 .mart_summarypanel_listheaderTable_highlighted
 {
-	background-color: 	#712786;
+	background-color: 	#CCCCCC;
 	color: black;
 	cursor: pointer;
 	font-weight: bold;
@@ -559,13 +559,13 @@ div#mart_export_data
 }
 .mart_summarypanel_listheaderTable_highlighted
 {
-	background-color: 	#712786;
+	background-color: 	#666666;
 	color: white;
 }
 
 .mart_summarypanel_listheader_empty
 {
-	background-color: 	#712786;
+	background-color: 	#CCCCCC;
 	color: black;
 	cursor: pointer;
 	font-weight: bold;
@@ -834,7 +834,7 @@ acronym
 
 #nav                        { display: none }
 .mart_main_menubar          { border-bottom: 1px solid white; }
-.mart_summarypanel_datasets { border-width: 1px 1px 1px 1px; border-color: #F0F0F0 }
+.mart_summarypanel_datasets { border-width: 1px 1px 1px 1px; border-color: [sidepanel_colour] }
 #mart_mainpanel             { border-width: 1px 1px 1px 1px; border-color: #999 }
 .mart_databasemenu,
 .mart_interfacemenu,
@@ -846,7 +846,7 @@ div#mart_bottom_bar         { border: 0px; border-top: 1px solid white }
 .mart_btnhov,
 .mart_btn_go,
 .mart_btnhov_go             { background-color: black; color: #fff; border: 2px outset #426FBF }
-.mart_tableSummaryPanel     { background-color: #F0F0F0
+.mart_tableSummaryPanel     { background-color: [sidepanel_colour]
  }
 .mart_summarypanel_listheader,
 .mart_summarypanel_listheader_mouseover,
@@ -866,7 +866,7 @@ div#mart_bottom_bar         { border: 0px; border-top: 1px solid white }
 .mart_btnhov:hover          { background-color: #993 }
 .mart_summarypanel_listheader_highlighted,
 .mart_summarypanel_AttFiltHeader_highlighted
-                          { background-color: #F0F0F0 }
+                          { background-color: [sidepanel_colour] }
 .mart_btn_new,
 .mart_btn_count,
 .mart_btn_url,
