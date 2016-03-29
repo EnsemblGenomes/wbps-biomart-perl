@@ -51,14 +51,27 @@
 	title="Choose a main dataset to query">
 	Dataset
 
+		[% dset = wq.get_mart_registry().getDatasetByName(session.param("schema"), dset_name) %]
+		[% entry_label = dset.getConfigurationTree("default").entryLabel || 'Entries' %]
+
+[% render_collapse_controls_summaryPanel("dataset.${dset_name}__summary", "$dset_displayname", 'show' ) # dataset_initial_hiddenstate %]
+
+  </span>
+</span>
+</td>
+</tr>
+</table>
+
+<table class="mart_summarypanel_listheaderTable" width="100%" border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; margin: 16px 0px 0px 0px;">
+<tr> 
+<td>
+
 	[% #### display count adjacent to DATASET TITLE %]
 	<span class="mart_summarypanel_dataset_entrycount" id="summarypanel_filter_count_[%dset_count%]">
 	 [% #### to be filled by ajaxcount via javascript except the case when we see the count for one dataset %]
 	 [% #### and then we add another dataset, we expect the count for first dataset to stay on screen %]
 	 [% #### the following code is just for the case stated %]
 
-		[% dset = wq.get_mart_registry().getDatasetByName(session.param("schema"), dset_name) %]
-		[% entry_label = dset.getConfigurationTree("default").entryLabel || 'Entries' %]
 		[% IF session.param('countButton') == 1 %]
 			[% dset_filter_count = 0 %]
 			[% dset_total_count = 0 %]
@@ -84,7 +97,6 @@
 </tr>
 </table> 
 
-[% render_collapse_controls_summaryPanel("dataset.${dset_name}__summary", "$dset_displayname", 'show' ) # dataset_initial_hiddenstate %]
 
 <!-- enabled filters list OPENS -->
 
