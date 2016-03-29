@@ -1301,12 +1301,12 @@ sub addAttributeFilter{
     my $atbl = BioMart::AttributeTable->new();
     my $value_filter;
     foreach my $value(@{$values}){
-	if ($value =~ /Only|Excluded/i){
-	    if ($value =~ /Excluded/i)
+	if ($value =~ /^Only|Excluded|With|Without$/i){
+	    if ($value =~ /^Excluded|Without$/i)
 		{
 			$attribute->setExcluded(1);
 		}
-		if ($value =~ /Only/i)
+		if ($value =~ /^Only|With$/i)
 		{
 			$attribute->setExcluded(0);
 		}		
@@ -1361,12 +1361,12 @@ sub addFilter{
     my $atbl = BioMart::AttributeTable->new();
     my $value_filter;
     foreach my $value(@{$values}){
-	if ($value =~ /Only|Excluded/i){
-	    if ($value =~ /Excluded/i)
+	if ($value =~ /^Only|Excluded|With|Without$/i){
+	    if ($value =~ /^Excluded|Without$/i)
 		{
 			$filter->setExcluded(1);
 		}
-		if ($value =~ /Only/i)
+		if ($value =~ /^Only|With$/i)
 		{
 			$filter->setExcluded(0);
 		}		
