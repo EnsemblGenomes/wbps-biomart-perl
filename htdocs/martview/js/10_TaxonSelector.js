@@ -22,7 +22,7 @@ $(document).ready(function() {
 		panel.getSelectedItems = function(preserveOrder) {
 			var selectedNodes = this.tree.dynatree("getTree").getSelectedNodes()
 			var items = $.map(selectedNodes, function(node){
-				  return node.data.isFolder ? null : {key: node.data.key, title: node.data.title};
+				  return node.data.isFolder ? null : {key: node.data.key, title: node.data.title, biomart: node.data.biomart};
 				});
 			if (!preserveOrder) {
 			  items.sort(function (a, b) {return a.title.toLowerCase().localeCompare(b.title.toLowerCase())});
