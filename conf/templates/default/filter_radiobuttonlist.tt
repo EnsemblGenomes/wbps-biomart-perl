@@ -37,6 +37,7 @@ document['${param_name}__image'].src='${filter.imageURL}';
   [% option_value = option.value() || option.name() %]
   [% option_value_escaped = option_value | replace('"','&quot;')  #" %]
   [% option_displayname = option.displayName() | replace('"','&quot;') #" %]
+<label>
 <input type="radio" id="[% param_name %]____[% option_displayname %]" name="[% param_name %]" value="[% option_value_escaped %]" 
 	onclick = "onchange();"
 	onchange="[% onchange_js %]" 
@@ -51,6 +52,7 @@ document['${param_name}__image'].src='${filter.imageURL}';
   <span title="[% option.description | replace('"','&quot;') %]">[% option_displayname %]</span>
   [% ELSE %]
   [% option_displayname %]
+  </label>
   [% END %]<br />
 
 [% END %]
