@@ -33,27 +33,47 @@ document['${param_name}__image'].src='${filter.imageURL}';
 [% onchange_js = onchange_js.replace("\n", "") %]
 
 [* is_first_option = 1 *]
-[% FOREACH option = filter.getAllOptions() %]
-  [% option_value = option.value() || option.name() %]
-  [% option_value_escaped = option_value | replace('"','&quot;')  #" %]
-  [% option_displayname = option.displayName() | replace('"','&quot;') #" %]
-<label>
-<input type="radio" id="[% param_name %]____[% option_displayname %]" name="[% param_name %]" value="[% option_value_escaped %]" 
-	onclick = "onchange();"
-	onchange="[% onchange_js %]" 
-[* IF session.param("[% param_name %]").defined()
-   && session.param("[% param_name %]") == "[% option_value %]" *]
- checked="checked" 
-[* ELSIF is_first_option && !session.param("[% param_name %]").defined() *]
- checked="checked" 
-[* is_first_option = 0 *]
-[* END *]
- />[% IF option.description %]
-  <span title="[% option.description | replace('"','&quot;') %]">[% option_displayname %]</span>
-  [% ELSE %]
-  [% option_displayname %]
-  </label>
-  [% END %]<br />
+
+[% # ParaSite mod: if there is only one value to select, then don't display it and just have it on by default %]
+
+[% IF filter.getAllOptions().size() == 1 %]
+
+  [% FOREACH option = filter.getAllOptions() %]
+    [% option_value = option.value() || option.name() %]
+    [% option_value_escaped = option_value | replace('"','&quot;')  #" %]
+    [% option_displayname = option.displayName() | replace('"','&quot;') #" %]
+  <input type="radio" style="visibility:hidden" id="[% param_name %]____[% option_displayname %]" name="[% param_name %]" value="[% option_value_escaped %]"
+          onclick = "onchange();"
+          onchange="[% onchange_js %]"
+          checked="checked"
+  [* is_first_option = 0 *]
+   />
+  [% END %]
+
+[% ELSE %]
+
+  [% FOREACH option = filter.getAllOptions() %]
+    [% option_value = option.value() || option.name() %]
+    [% option_value_escaped = option_value | replace('"','&quot;')  #" %]
+    [% option_displayname = option.displayName() | replace('"','&quot;') #" %]
+  <label>
+  <input type="radio" id="[% param_name %]____[% option_displayname %]" name="[% param_name %]" value="[% option_value_escaped %]" 
+  	onclick = "onchange();"
+  	onchange="[% onchange_js %]" 
+  [* IF session.param("[% param_name %]").defined()
+     && session.param("[% param_name %]") == "[% option_value %]" *]
+   checked="checked" 
+  [* ELSIF is_first_option && !session.param("[% param_name %]").defined() *]
+   checked="checked" 
+  [* is_first_option = 0 *]
+  [* END *]
+   />[% IF option.description %]
+    <span title="[% option.description | replace('"','&quot;') %]">[% option_displayname %]</span>
+    [% ELSE %]
+    [% option_displayname %]
+    </label>
+    [% END %]<br />
+  [% END %]
 
 [% END %]
 
