@@ -1112,17 +1112,21 @@ function getFiltersInContainer(containerEltId) {
 													filterValues.push(portions[1]); // id to display in summaryPanel for List radio buttons
 												}
 											}
-											filterValue = filterValues.join();
-											
-											for(z=0; z<filterValueElt.options.length; z++ ) {
-												if (filterValueElt.options[z].selected){
-													filterDisplayName = filterValueElt.options[z].text;											
-													filterName = dset_prefix+'filter.'+filterValueElt.options[z].value;
-													// alert("filterName was "+filterName);
-													addOrReplaceHiddenFormParam(filterName+'__list', document.mainform, filterValue);
-													filterInfoOf[filterName] = [filterDisplayName, filterValue];
-												}
-											}
+											//filterValue = filterValues.join();
+											filterValue = '[List specified]';
+                                                                                        filterName = filterValueElt.name;
+                                                                                        filterDisplayName = currentFilterDisplayName;
+                                                                                        filterInfoOf[filterName] = [filterDisplayName, filterValue];
+
+											//for(z=0; z<filterValueElt.options.length; z++ ) {
+											//	if (filterValueElt.options[z].selected){
+											//		filterDisplayName = filterValueElt.options[z].text;											
+											//		filterName = dset_prefix+'filter.'+filterValueElt.options[z].value;
+											//		// alert("filterName was "+filterName);
+											//		addOrReplaceHiddenFormParam(filterName+'__list', document.mainform, filterValue);
+											//		filterInfoOf[filterName] = [filterDisplayName, filterValue];
+											//	}
+											//}
 										}
 										else if(idListTextAreaElts.length > 0 && idListTextAreaElts[0].value != '') 
 										{				    
