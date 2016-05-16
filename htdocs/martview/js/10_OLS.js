@@ -47,7 +47,7 @@ $(document).ready(function() {
                                 };
 			}
 			$.ajax({
-				url: "http://www.ebi.ac.uk/ontology-lookup/ajax.view",
+				url: "/ontology-lookup",
 				type: 'GET',
 				data: requestData,
 				success: function(responseXML) {
