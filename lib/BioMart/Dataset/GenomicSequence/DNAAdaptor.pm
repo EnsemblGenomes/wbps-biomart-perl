@@ -283,7 +283,7 @@ sub getSequence {
 
     if ($seqLen < $len) {
         #in place modification of reference $ret
-	$self->_fetchResidualSequence($chr, $start, $len, \$ret);
+	$self->_fetchResidualSequence($chr, $start, $len, \$ret, $species);
     }
 
     return $ret;
