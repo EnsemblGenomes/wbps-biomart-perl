@@ -170,7 +170,7 @@
 				
 				<tr>
 				<td align="left" width="25%" valign="top">
-					&nbsp;Export &nbsp;all results to&nbsp;&nbsp;
+					&nbsp;Export&nbsp;all results to&nbsp;&nbsp;
 				</td>
 				<td align="left" width="75%" valign="top">
 						<select name="export_saveto"
