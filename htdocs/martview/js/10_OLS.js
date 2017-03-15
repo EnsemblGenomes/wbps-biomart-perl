@@ -32,46 +32,35 @@ $(document).ready(function() {
 			var endPoint;
 			var requestData;
 			if(request.term.length == 10 && request.term.substring(0,3) == 'GO:') {
-				endPoint = 'getTermsByIdResponse';
+				endPoint = 'select';
 				requestData = {
-					q: 'termname',
-					termid: request.term,
-					ontologyname: 'GO',
+					q: request.term,
+					ontologyname: 'go',
 				}; 
 			} else {
-				endPoint = 'getTermsByName';
+				endPoint = 'select';
 				requestData = {
-					q: 'termautocomplete',
-                                        termname: request.term,
-                                        ontologyname: 'GO',
+                                        q: request.term,
+                                        ontology: 'go',
                                 };
 			}
 			$.ajax({
-				url: "/ontology-lookup",
+				url: "/ontology-lookup/select",
 				type: 'GET',
 				data: requestData,
-				success: function(responseXML) {
-					//console.log(responseXML.toString());
-					if(endPoint == 'getTermsByName') {
-						var data = $('item', responseXML).map(function() {
-							var displayVal = $('name', this).text() + ' [' + $('value', this).text() + ']';
-							return {
-								value: displayVal,
-								id: $('value', this).text(),
-							};
-						}).get();
-					} else {
-						var data = $('item', responseXML).map(function() {
-							return {
-								value: $('value', this).text() + ' [' + request.term + ']',
-								id: $('value', this).text(),
-							};
-						}).get();;
-					}
+        dataType: 'json',
+				success: function(responseJSON) {
+					var data = $.map(responseJSON.response.docs, function(obj) {
+						var displayVal = obj.label + ' [' + obj.obo_id + ']';
+						return {
+							value: displayVal,
+							id: obj.obo_id,
+						};
+					});
 					response(data);
 				},
 				error: function(data) {
-					//console.log(data);
+				  //console.log(data);
 				},
 			});
 		},
