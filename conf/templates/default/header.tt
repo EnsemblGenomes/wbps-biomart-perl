@@ -7,7 +7,7 @@ var BIOMART_SPECIES = 'WormBase ParaSite';
 <table summary="layout table" class="mh">
   <tbody>
     <tr>
-      <td id="mh_lo"><a href="/"><img style="width: 322px; height: 34px" title="WormBase ParaSite Home" alt="WormBase ParaSite Home" src="http://parasite.wormbase.org/i/parasite.png" /></a></td>
+      <td id="mh_lo"><a href="/"><img style="width: 322px; height: 34px" title="WormBase ParaSite Home" alt="WormBase ParaSite Home" src="//parasite.wormbase.org/i/parasite.png" /></a></td>
       <td id="mh_search" style="float: right; margin: 2px; text-align: right">
         <form action="/Multi/psychic">
           <input type="text" placeholder="Search WormBase ParaSite..." data-role="none" name="q" id="se_q" class="query" style="border-radius: 6px; font: 12pt sans-serif; height: 30px">
@@ -21,7 +21,7 @@ var BIOMART_SPECIES = 'WormBase ParaSite';
 <table summary="layout table" class="mh">
   <tbody>
     <tr>
-      <td id="mh_bc"><strong><a href="http://www.wormbase.org">WormBase Home</a>&nbsp;|&nbsp;<a href="http://parasite.wormbase.org">ParaSite Home</a></strong></td>
+      <td id="mh_bc"><strong><a href="http://www.wormbase.org">WormBase Home</a>&nbsp;|&nbsp;<a href="/">ParaSite Home</a></strong></td>
       <td id="mh_lnk">
         <a href="/Multi/blastview">BLAST</a> &nbsp | &nbsp
         <a href="/biomart/martview">BioMart</a> &nbsp | &nbsp
