@@ -12,7 +12,7 @@
            schema       = "parasite_mart_10_merged"
            user         = "ensro"
            password     = ""
-           visible      = "0"
+           visible      = "1"
            default      = ""
            includeDatasets = ""
            martUser     = ""
