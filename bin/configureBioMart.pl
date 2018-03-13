@@ -69,7 +69,7 @@ my $MODPERL_PREFIX = $ENV{MODPERL_PREFIX};
 	{
 		#print  $ARGUMENTS{registryFile}, "\n";
 		$ARGUMENTS{"-r"} =~ m/.*?\/?([^\/]*)\Z/;
-		$OPTIONS{conf} .= $1;	
+		$OPTIONS{conf} .= "/$1";	
 	}
 	else
 	{
@@ -476,9 +476,9 @@ sub libModules
 sub loadCSSSettings
 {
 	my $registryFile = $OPTIONS{conf};
-  my $htdocs_dir =  $settingsHash->{'dirSettings'}{'htdocs_dir'} || Cwd::cwd()."";
-	my $cssFile_template = $htdocs_dir."martview/martview_template.css"; 
-	my $cssFile = $htdocs_dir."martview/martview.css"; 
+  my $htdocs_dir =  $settingsHash->{'dirSettings'}{'htdocs_dir'} || Cwd::cwd()."/htdocs";
+	my $cssFile_template = $htdocs_dir."/martview/martview_template.css"; 
+	my $cssFile = $htdocs_dir."/martview/martview.css"; 
 	#print $cssFile;
 	$registryFile =~ m/(.*\/)[^\/]*/;
 	#BioMart::Web::SiteDefs::configure($1); # Load settings. $1 is absolute path to registry file Directory

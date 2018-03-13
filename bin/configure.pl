@@ -270,6 +270,7 @@ print "\n";
 		{
 			$run_configureBioMart .= " $recompile";
 		}
+		print "Running: $run_configureBioMart\n"; 
 		bin::ExecuteConfigureBioMartBuilder->executeSystemCommand($run_configureBioMart);			
 	}	
 
