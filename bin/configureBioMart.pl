@@ -45,7 +45,7 @@ my $MODPERL_PREFIX = $ENV{MODPERL_PREFIX};
 	my %OPTIONS;
 	my %ARGUMENTS;
 
-  $OPTIONS{conf}   = $ENV{ENSEMBL_MART_CONF_DIR} || Cwd::cwd()."/conf/"; 
+  $OPTIONS{conf}   = $ENV{ENSEMBL_MART_CONF_DIR_yeah_lets_make_this_not_exist} || Cwd::cwd()."/conf/"; 
 
   @{$OPTIONS{modules_in_dist}} = ("BioMart/Initializer.pm"); # quick fix: under certain situations Initializer.pm has to be the first one
 
