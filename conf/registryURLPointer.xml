@@ -18,6 +18,21 @@
            martUser     = ""
 />
 <MartDBLocation
+           name         = "parasite_sequence_mart_10"
+           displayName  = "WBPS 10 Sequence Mart"
+           host         = "mysql-ps-staging-2.ebi.ac.uk"
+           databaseType = "mysql"
+           port         = "4467"
+           database     = "parasite_sequence_mart_10"
+           schema       = "parasite_sequence_mart_10"
+           user         = "ensro"
+           password     = ""
+           visible      = "0"
+           default      = ""
+           includeDatasets = ""
+           martUser     = ""
+/>
+<MartDBLocation
            name         = "ontology"
            displayName  = "Ontology Mart"
            host         = "mysql-eg-mirror.ebi.ac.uk"
