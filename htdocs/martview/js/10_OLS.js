@@ -45,7 +45,7 @@ $(document).ready(function() {
                                 };
       }
       $.ajax({
-        url: "/ontology-lookup/select",
+        url: "https://www.ebi.ac.uk/ols/api/select",
         type: 'GET',
         data: requestData,
         dataType: 'json',
