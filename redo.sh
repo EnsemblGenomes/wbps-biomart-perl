@@ -1,19 +1,18 @@
-#!/bin/bash
+#!/bin/bash -x
 
-if [ -z "$MODPERL_PREFIX" ]; then
-   export MODPERL_PREFIX=/nfs/public/rw/ensembl/apache-perlbrew
+
+
+if [ -z "$1" ] || [ ! -d "$1" ];then
+    echo "Supply a valid config dir"
+    exit 1
+else
+    export ENSEMBL_MART_CONF_DIR=$1
 fi
 
-reg=$1
-defreg="./conf/registryURLPointer.xml"
-if [ -z "$reg" ]; then
-    reg=$defreg
-fi
-reg=$(readlink -f $reg)
 
-echo -ne 'n' | perl bin/configure.pl --clean -r $reg || {
-    echo "Failed to rerun configure.pl with $reg"
+echo -ne 'n' | perl bin/configure.pl --clean -r 'registry.xml' || {
+    echo "Failed to rerun configure.pl with $ref"
     exit 1
 }
 
-./restart.sh
+./restart.sh $ENSEMBL_MART_CONF_DIR
