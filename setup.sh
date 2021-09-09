@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Script to setup ParaSite $LIVE_PATH and archive biomart, usage: ./setup.sh [--archive]
+# Script to setup ParaSite $LIVE_PATH and archive biomart, usage: ./setup.sh [--archive | --fallback]
 
 LIVE_PATH='live'
 DATABASE_HOST='pg-mysql-ps-mart-rel'
@@ -9,6 +9,10 @@ if [ "$1" = "--archive" ]; then
    LIVE_PATH='live/archive'
    DATABASE_HOST='mysql-ps-archive-mart'
    DATABASE_PORT='4696'
+fi
+
+if [ "$1" = "--fallback" ]; then
+   DATABASE_HOST='fb1-mysql-ps-mart-rel'
 fi
 
 if [ -z "$RELEASE_VERSION" ]; then
