@@ -53,7 +53,7 @@ cp -r /nfs/public/release/ensweb/$LIVE_PATH/parasite-mart/release-$RELEASE_VERSI
 echo "Creating databases connection at /nfs/incoming/ensweb/$LIVE_PATH/parasite-mart/release-$RELEASE_VERSION/conf/registry.xml"
 sed -e "s/#PSVERSION#/$RELEASE_VERSION/; s/#ENSVERSION#/$ENS_VERSION/; s/#DATABASE_HOST#/$DATABASE_HOST/; s/#DATABASE_PORT#/$DATABASE_PORT/" /nfs/incoming/ensweb/$LIVE_PATH/parasite-mart/release-$RELEASE_VERSION/conf/registryURLPointer.xml > /nfs/incoming/ensweb/$LIVE_PATH/parasite-mart/release-$RELEASE_VERSION/conf/registry.xml
 sed -i "s/<release_version>/release-$RELEASE_VERSION/" /nfs/incoming/ensweb/$LIVE_PATH/parasite-mart/release-$RELEASE_VERSION/conf/settings.conf
-sed -i "s/<stage_path>/$LIVE_PATH/" /nfs/incoming/ensweb/$LIVE_PATH/parasite-mart/release-$RELEASE_VERSION/conf/settings.conf
+sed -i "s|<stage_path>|$LIVE_PATH|" /nfs/incoming/ensweb/$LIVE_PATH/parasite-mart/release-$RELEASE_VERSION/conf/settings.conf
 cd /nfs/public/release/ensweb/$LIVE_PATH/parasite-mart/release-$RELEASE_VERSION/biomart/
 export PERL5LIB=.:$PERL5LIB
 ./redo.sh "/nfs/incoming/ensweb/$LIVE_PATH/parasite-mart/release-$RELEASE_VERSION/conf/"
